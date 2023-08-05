@@ -1,0 +1,82 @@
+{% comment %} <!-- flight_booking/templates/homepage.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Flight Booking</title>
+</head>
+<body>
+  <h1>Welcome to Flight Booking</h1>
+  <p>Choose an option:</p>
+  <ul>
+    <li><a href="{% url 'user_login' %}">Login</a></li>
+    <li><a href="{% url 'user_signup' %}">Signup</a></li>
+    <li><a href="{% url 'admin_login' %}">Admin</a></li>
+  </ul>
+</body>
+</html> {% endcomment %}
+
+
+<!-- flight_booking/templates/homepage.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Flight Booking</title>
+    <!-- Add the link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Flight Booking</h1>
+        <p>Choose an option:</p>
+        <ul>
+            <li><a href="{% url 'user_login' %}">Login</a></li>
+            <li><a href="{% url 'user_signup' %}">Signup</a></li>
+            <li><a href="{% url 'admin_login' %}">Admin</a></li>
+        </ul>
+    </div>
+</body>
+</html>

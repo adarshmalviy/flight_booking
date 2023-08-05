@@ -1,0 +1,25 @@
+<!-- templates/flights/view_bookings.html -->
+
+{% extends 'flights/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>My Bookings</h2>
+        {% if bookings %}
+            <ul class="list-group">
+                {% for booking in bookings %}
+                    <li class="list-group-item">
+                        <strong>Flight Number:</strong> {{ booking.flight.flight_number }}<br>
+                        <strong>Source City:</strong> {{ booking.flight.source_city }}<br>
+                        <strong>Destination City:</strong> {{ booking.flight.destination_city }}<br>
+                        <strong>Departure Time:</strong> {{ booking.flight.departure_time }}<br>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="mt-3">You have no bookings.</p>
+        {% endif %}
+        <!-- Add the Dashboard button -->
+        <a href="{% url 'dashboard' %}" class="btn btn-primary mt-3">Go to Dashboard</a>
+    </div>
+{% endblock %}

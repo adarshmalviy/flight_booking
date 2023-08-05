@@ -1,0 +1,55 @@
+
+<!-- templates/admins/add_flight.html -->
+
+{% extends 'admins/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Add Flight</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.flight_number.id_for_label }}">Flight Number:</label>
+                {{ form.flight_number }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.source_city.id_for_label }}">Source City:</label>
+                {{ form.source_city }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.destination_city.id_for_label }}">Destination City:</label>
+                {{ form.destination_city }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.departure_time.id_for_label }}">Departure Time:</label>
+                {{ form.departure_time }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.seat_count.id_for_label }}">Seat Count:</label>
+                {{ form.seat_count }}
+            </div>
+            <button type="submit" class="btn btn-primary">Add Flight</button>
+        </form>
+        <a href="{% url 'admin_dashboard' %}" class="btn btn-secondary mt-3">Go back to Dashboard</a>
+    </div>
+{% endblock %}
+
+
+
+{% comment %} 
+<!-- templates/admins/add_flight.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Flight</title>
+</head>
+<body>
+    <h1>Add Flight</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Flight</button>
+    </form>
+    <a href="{% url 'admin_dashboard' %}">Go back to Dashboard</a>
+</body>
+</html> {% endcomment %}

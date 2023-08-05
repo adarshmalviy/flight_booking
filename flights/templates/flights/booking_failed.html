@@ -1,0 +1,14 @@
+<!-- templates/flights/booking_failed.html -->
+
+{% extends 'flights/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Booking Failed</h1>
+        <p>Flight Number: {{ flight.flight_number }}.</p>
+        <p class="text-danger">{{ error_message }}</p>
+
+        <!-- Add the Dashboard button -->
+        <a href="{% url 'dashboard' %}" class="btn btn-primary mt-3">Go to Dashboard</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- templates/admins/remove_flight.html -->
+
+{% extends 'admins/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Remove Flight</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="flight_id">Enter Flight ID:</label>
+                <input type="text" name="flight_id" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Remove Flight</button>
+        </form>
+        {% if error_message %}
+            <p class="text-danger">{{ error_message }}</p>
+        {% endif %}
+        <a href="{% url 'admin_dashboard' %}" class="btn btn-secondary mt-2">Back to Dashboard</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!-- flight_booking/templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Booking</title>
+    <!-- Add the link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Add more styles if needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flight Booking</h1>
+        <!-- Add navigation bar, headers, or any common content here -->
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

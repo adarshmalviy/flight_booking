@@ -1,0 +1,27 @@
+<!-- flight_booking/templates/users/dashboard.html -->
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>User Dashboard</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Welcome, {{ request.user.username }}!</p>
+                        <h2>Welcome, {{ user.username }}!</h2>
+                        <p>What would you like to do?</p>
+                        <ul>
+                            <li><a href="{% url 'flights:search_flights' %}" class="btn btn-primary">Search Flights</a></li>
+                            <li><a href="{% url 'flights:my_bookings' %}" class="btn btn-primary">My Bookings</a></li>
+                            <li><a href="{% url 'flights:book_flight' %}" class="btn btn-primary">Book a Flight</a></li>
+                        </ul>
+                        <p><a href="{% url 'user_logout' %}" class="btn btn-danger">Logout</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

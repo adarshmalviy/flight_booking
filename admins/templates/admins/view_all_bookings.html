@@ -1,0 +1,29 @@
+<!-- templates/admins/view_all_bookings.html -->
+
+{% extends 'admins/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>View All Bookings</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="flight_number">Enter Flight Number:</label>
+                <input type="text" name="flight_number" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">View Bookings</button>
+        </form>
+        {% if bookings %}
+            <h2>Bookings for Flight {{ flight_number }}:</h2>
+            <ul>
+                {% for booking in bookings %}
+                <li>{{ booking.user }} - {{ booking.flight.flight_number }} - {{ booking.flight.departure_time }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if error_message %}
+            <p class="text-danger">{{ error_message }}</p>
+        {% endif %}
+        <a href="{% url 'admin_dashboard' %}" class="btn btn-secondary mt-2">Back to Dashboard</a>
+    </div>
+{% endblock %}

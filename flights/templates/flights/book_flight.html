@@ -1,0 +1,33 @@
+<!-- templates/flights/book_flight.html -->
+
+{% extends 'flights/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Book Flight</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="flight_number">Flight Number:</label>
+                <input type="text" name="flight_number" id="flight_number" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Book</button>
+        </form>
+
+        <!-- Display booking status here -->
+        {% if message %}
+        <div class="alert alert-success mt-3">
+            {{ message }}
+        </div>
+        {% endif %}
+
+        {% if error_message %}
+        <div class="alert alert-danger mt-3">
+            {{ error_message }}
+        </div>
+        {% endif %}
+
+        <!-- Add the Dashboard button -->
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3">Go to Dashboard</a>
+    </div>
+{% endblock %}
