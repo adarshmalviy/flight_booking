@@ -25,6 +25,9 @@ Flight Booking is a web application that allows users to search for flights, mak
 - **Admin Dashboard:** Admins have a dedicated dashboard to manage flights and view bookings.
 - **Responsive Design:** The application is designed to work seamlessly on various devices.
 
+## db schema
+![db schema image](https://github.com/adarshmalviy/flight_booking/blob/main/graphviz.svg)
+
 ## Architecture
 
 The architecture of the flight booking web application, including its web pages, apps, modules, and database.
