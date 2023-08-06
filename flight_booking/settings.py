@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-p2crh1#ua(dt_8%6&97@a)s@=9aj6p#h^cxkcr#!z3_!hf9$zx"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["flight-booking-red.vercel.app", ".vercel.app"]
 
